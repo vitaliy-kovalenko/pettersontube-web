@@ -27,7 +27,7 @@ export default function UploadVideo() {
 		getRootProps,
 		getInputProps,
 		isDragActive,
-	} = useDropzone({ onDrop, maxFiles: 1, accept: 'video/*' })
+	} = useDropzone({ onDrop, maxFiles: 1, accept: 'video/*', maxSize: 50 * 1024 * 1024 })
 
 	const onProgress = useCallback((event) => {
 		setProgress(Math.round((event.loaded * 100) / event.total))
@@ -50,8 +50,6 @@ export default function UploadVideo() {
 			description: description.attrs.value,
 			file,
 		}
-		const valid = title.validate()
-		if (!valid) return
 
 		createVideoApi(dataToSend, onProgress)
 			.then(() => {
@@ -73,7 +71,7 @@ export default function UploadVideo() {
 						Drop the files here ...
 					</Typography> :
 					<Typography color='textSecondary' variant='body1'>
-						{'Drag \'n\' drop your video file here,\n or click to select video'}
+						{'Drag \'n\' drop your video file here,\n or click to select video.\nMax size is 50MB'}
 					</Typography>
 			}
 		</div>
