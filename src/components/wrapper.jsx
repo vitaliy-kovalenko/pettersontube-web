@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core'
 
 const useStyle = makeStyles({
 	root: {
-		backgroundImage: 'linear-gradient(to bottom, #42bd88, #2aa683, #108779)',
+		backgroundColor: '#272932',
 		height: '100vh',
 		width: '100vw',
 		display: 'flex',
