@@ -4,12 +4,12 @@ import { Card, CardActionArea, CardMedia, CardContent } from '@material-ui/core'
 import Typography from 'components/typography'
 import { useVideoCardStyle } from './style'
 
-export default function VideoCard({ video }) {
+export default function VideoCard({ video, onClick }) {
 	const { title, description } = video
 	const classes = useVideoCardStyle()
 
 	return (
-		<Card className={classes.root}>
+		<Card className={classes.root} onClick={onClick.bind(null, video)}>
 			<CardActionArea>
 				<CardMedia
 					className={classes.media}
@@ -17,7 +17,7 @@ export default function VideoCard({ video }) {
 					title='Contemplative Reptile'
 				/>
 				<CardContent>
-					<Typography gutterBottom variant='h5' component='h2'>
+					<Typography gutterBottom variant='h5' component='h2' className={classes.title}>
 						{title}
 					</Typography>
 					<Typography
