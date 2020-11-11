@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Box, Button, Grid } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 import Typography from 'components/typography'
 import { useRouter } from 'routes/custom-browser-router'
@@ -35,7 +36,11 @@ export default function VideosList() {
 	}, [router])
 
 	const renderNoVideos = useMemo(() => (
-		<Typography color='textSecondary' variant='h3'>No videos found.</Typography>
+		<Typography color='textSecondary' variant='h3'>
+			No videos found.
+			<br />
+			<Link to={'/upload'}>Create one!</Link>
+		</Typography>
 	), [])
 
 	const renderVideoCards = useMemo(

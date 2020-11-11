@@ -18,6 +18,11 @@ export const useVideoCardStyle = makeStyles({
 	media: {
 		height: 160,
 	},
+	title: {
+		whiteSpace: 'nowrap',
+		overflow: 'hidden',
+		textOverflow: 'ellipsis',
+	},
 	description: {
 		whiteSpace: 'nowrap',
 		overflow: 'hidden',
