@@ -13,7 +13,7 @@ function getStyleProp(props) {
 }
 
 export default function Typography(props) {
-	const { variant, className, fontColor, ...other } = props
+	const { variant, className, ...other } = props
 
 	const style = getStyleProp(props)
 
@@ -23,7 +23,6 @@ export default function Typography(props) {
 			variant={variant}
 			className={className}
 			style={style}
-			color={fontColor}
 		>
 			{props.children}
 		</MuiTypography>
