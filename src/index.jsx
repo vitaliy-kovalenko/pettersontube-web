@@ -1,12 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { MuiThemeProvider } from '@material-ui/core'
+
+import theme from 'lib/theme'
+
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 import AppRouter from './routes'
 
 ReactDOM.render(
 	<React.StrictMode>
-		<AppRouter />
+		<MuiThemeProvider theme={theme}>
+			<AppRouter />
+		</MuiThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root'),
 )
